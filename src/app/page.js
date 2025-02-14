@@ -1,8 +1,10 @@
 "use client"
 import Script from "next/script";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+
+  let [skAccessToken, setSkAccessToken] = useState("");
   //*** Populate the parameters below from your DaVinci environment ***/
   const companyId = "2422107b-7011-48bb-8366-735e927271f2";
 
@@ -27,10 +29,13 @@ export default function Home() {
   let queryString = "";
   //queryString
   console.log(`queryString = ${queryString}`);
-
+  if(skAccessToken){
+    return; 
+  }
   useEffect(() => {
     fetch(skGetTokenUrl, requestOptions).then((response) => response.json)
       .then((responseData) => {
+        skAccessToken = responseData.access_token;
         const props = {
           config: {
             method: "runFlow",

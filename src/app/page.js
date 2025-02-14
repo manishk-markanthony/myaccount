@@ -68,10 +68,8 @@ export default function Home() {
     }
 
     function errorCallback(error) {
-      console.log('error while running flow ', error);
-      if (error && error.httpResponseCode === 401 && error.errorMessage === "Unauthorized!") {
-        window.location.reload();
-      }
+       console.log('error while running flow ', error);
+      
     }
 
     function onCloseModal() {

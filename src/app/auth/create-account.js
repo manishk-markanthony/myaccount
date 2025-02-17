@@ -98,6 +98,7 @@ export default function CreateAccount() {
       })
       return (
         <div id="ping-container">
+          <h1>Create-Account</h1>
           <Script type="text/javascript" src="https://assets.pingone.com/davinci/latest/davinci.js" />
           <div className="loader" id="loader"></div>
           <div id="widget" className="skWidget"></div>

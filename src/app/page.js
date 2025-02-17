@@ -29,10 +29,11 @@ export default function Home() {
   let queryString = "";
   //queryString
   console.log(`queryString = ${queryString}`);
-  if(skAccessToken){
-    return; 
-  }
+
   useEffect(() => {
+    if(skAccessToken){
+      return; 
+    }
     fetch(skGetTokenUrl, requestOptions).then((response) => response.json)
       .then((responseData) => {
         skAccessToken = responseData.access_token;
@@ -80,7 +81,7 @@ export default function Home() {
     function onCloseModal() {
       console.log("onCloseModal");
     }
-  })
+  }, [skAccessToken])
 
   return (
     <div id="ping-container"> 

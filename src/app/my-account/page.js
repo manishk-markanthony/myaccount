@@ -18,7 +18,7 @@ export default function Page() {
         setIsLoggedIn(getCookie("login"));
     }, [isLoggedIn]);
     if (isLoggedIn) {
-        return router.push('/myaccount');
+        return router.push('./MyAccount');
     }
-    return router.push('/login');
+    return <></>
 }

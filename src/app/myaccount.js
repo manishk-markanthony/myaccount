@@ -43,7 +43,7 @@ export default function MyAccount(props) {
                       apiRoot: "https://auth.pingone.com/",
                       accessToken: responseData.access_token,
                       companyId: companyId,
-                      policyId: "ce4b5eb553cb1fe51ae315718cdce6ff",
+                      policyId: "419b67d231f705b4e5cf9dc5ab2465e7",
                       parameters: {
                           "redirectUrl": queryString,
                           "brand": "WCB",

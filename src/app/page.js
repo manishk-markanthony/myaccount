@@ -1,9 +1,9 @@
 "use client"
 import { useEffect, useState } from "react";
-import { useRouter } from 'next/navigation'
+import MyAccount from "./my-account/my-account";
+import Login from "./login/login";
 
 export default function Home(props) {
-  const router = useRouter();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
     function getCookie(name) {
@@ -18,9 +18,8 @@ export default function Home(props) {
     }
     setIsLoggedIn(getCookie("login"));
   }, [isLoggedIn]);
-   
-  if(isLoggedIn) { 
-    return router.push('/my-account');
+  if(isLoggedIn){
+    return (<MyAccount></MyAccount>);
   }
-  return router.push('/login');
+  return (<Login></Login>);
 }

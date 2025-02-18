@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 
 export default function Login(props) {
-  console.log(props.session);
+
   useEffect(() => {
     //*** Populate the parameters below from your DaVinci environment ***/
     const companyId = "2422107b-7011-48bb-8366-735e927271f2";

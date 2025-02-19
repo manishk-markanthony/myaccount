@@ -87,7 +87,7 @@ export default function CreateAccount(props) {
       }
   })
   return (
-    <div id="ping-container"> create account
+    <div id="ping-container">
       <Script type="text/javascript" src="https://assets.pingone.com/davinci/latest/davinci.js" />
       <div className="loader" id="loader"></div>
       <div id="widget" className="skWidget"></div>

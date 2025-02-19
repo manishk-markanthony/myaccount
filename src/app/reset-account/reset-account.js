@@ -87,7 +87,7 @@ export default function ResetAccount(props) {
       }
   })
   return (
-    <div id="ping-container"> Reset account
+    <div id="ping-container">
       <Script type="text/javascript" src="https://assets.pingone.com/davinci/latest/davinci.js" />
       <div className="loader" id="loader"></div>
       <div id="widget" className="skWidget"></div>

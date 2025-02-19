@@ -90,7 +90,7 @@ export default function Login(props) {
     }
   })
   return (
-    <div id="ping-container"> Login
+    <div id="ping-container">
       <Script type="text/javascript" src="https://assets.pingone.com/davinci/latest/davinci.js" />
       <div className="loader" id="loader"></div>
       <div id="widget" className="skWidget"></div>

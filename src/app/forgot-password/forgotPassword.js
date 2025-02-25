@@ -1,9 +1,9 @@
 "use client"
 import Script from "next/script";
 import { useEffect } from "react";
-import { API_ROOT, BRAND_WCB, COMPANY_ID, COUNTRY_US, METHOD_GET, MY_ACCOUNT_POLICY_ID, PING_RUN_FLOW, SK_API_KEY, SK_GET_TOKEN_URL } from "@/util/constant";
+import { API_ROOT, BRAND_WCB, COMPANY_ID, COUNTRY_US, FORGOT_PASSWORD_POLICY_ID, METHOD_GET, PING_RUN_FLOW, SK_API_KEY, SK_GET_TOKEN_URL } from "@/util/constant";
 
-export default function MyAccount(props) {
+export default function ForgotPassword(props) {
     useEffect(function () {
 
         //*** Add the API Key from your DaVinci application. ***/
@@ -36,9 +36,9 @@ export default function MyAccount(props) {
                         apiRoot: API_ROOT,
                         accessToken: responseData.access_token,
                         companyId: COMPANY_ID,
-                        policyId: MY_ACCOUNT_POLICY_ID,
+                        policyId: FORGOT_PASSWORD_POLICY_ID,
                         parameters: {
-                            "redirectUrl": queryString,
+                            "redirectURL": queryString,
                             "brand": BRAND_WCB,
                             "country": COUNTRY_US
                         }
@@ -54,10 +54,12 @@ export default function MyAccount(props) {
                     document.getElementById("loader").style.display = 'none';
                 }, 1500);
 
-                davinci.skRenderScreen(
-                    document.getElementsByClassName("skWidget")[0],
-                    props
-                );
+                if (davinci) {
+                    davinci.skRenderScreen(
+                        document.getElementsByClassName("skWidget")[0],
+                        props
+                    );
+                }
             })
             .catch((error) => {
                 console.log('error while running flow ', error);
@@ -72,7 +74,6 @@ export default function MyAccount(props) {
             setTimeout(() => {
                 window.location.href = multipassURL;
             }, 100);
-
         }
 
         function errorCallback(error) {

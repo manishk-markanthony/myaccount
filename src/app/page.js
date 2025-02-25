@@ -1,8 +1,4 @@
-"use client"
-import { useRouter } from 'next/navigation'
+import MyAccount from './my-account/my-account'
 export default function Home(props) {
-  const router = useRouter()
-  if(router) {
-    return router.push("./login");
-  }
+  return (<MyAccount />)
 }

@@ -1,17 +1,17 @@
 "use client"
 import Script from "next/script";
 import { useEffect } from "react";
-import { apiRoot, companyId, login_policyId, method_GET,skApiKey, skGetTokenUrl } from "@/util/constant";
+import { API_ROOT, BRAND_WCB, COMPANY_ID, COUNTRY_US, LOGIN_POLICY_ID, METHOD_GET, PING_RUN_FLOW, SK_API_KEY, SK_GET_TOKEN_URL } from "@/util/constant";
 
 export default function Login(props) {
 
   useEffect(() => {
-    //*** Add the API Key from your DaVinci application. ***/
+   
     var headers = new Headers();
-    headers.append("X-SK-API-KEY", skApiKey);
-
+    headers.append("X-SK-API-KEY", SK_API_KEY);
+    
     const requestOptions = {
-      method:  method_GET,
+      method:  METHOD_GET,
       headers: headers,
       redirect: "follow",
     };
@@ -27,21 +27,21 @@ export default function Login(props) {
 
 
     //*** Retrieve SK Token ***/
-    fetch(skGetTokenUrl, requestOptions)
+    fetch(SK_GET_TOKEN_URL, requestOptions)
       .then((response) => response.json())
       .then((responseData) => {
         console.log(`responseData : ${responseData}`);
         var props = {
           config: {
-            method: "runFlow",
-            apiRoot: apiRoot,
+            method: PING_RUN_FLOW,
+            apiRoot: API_ROOT,
             accessToken: responseData.access_token,
-            companyId: companyId,
-            policyId: login_policyId,
+            companyId: COMPANY_ID,
+            policyId: LOGIN_POLICY_ID,
             parameters: {
               "redirectUrl": queryString,
-              "brand": "WCB",
-              "country": "US"
+              "brand": BRAND_WCB,
+              "country": COUNTRY_US
             }
           },
           useModal: false,

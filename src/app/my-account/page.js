@@ -10,8 +10,7 @@ export default function Page() {
       useEffect(() => {
         setIsLoggedIn(getCookie("login"));
       }, [isLoggedIn]);
-       
-      console.log('isLoggedInisLoggedInisLoggedInisLoggedIn');
+      console.log(`isLoggedIn : ${isLoggedIn}`);
       if(!isLoggedIn) { 
         return <Login></Login>
       }

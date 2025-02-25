@@ -1,4 +1,5 @@
-import MyAccount from './my-account/my-account'
-export default function Home(props) {
-  return (<MyAccount />)
+import Home from './Home'
+export default function Page(props) {
+    return <Home/>
+  
 }

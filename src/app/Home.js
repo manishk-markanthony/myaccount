@@ -5,8 +5,8 @@ export default function Home(props) {
       <h3>Please login to continue</h3>
 
       <div>
-      <a href="/login">Login</a> <br/>
-      <a href="/create-account">Create account</a>
+      <a href="/myaccount/login">Login</a> <br/>
+      <a href="/myaccount/create-account">Create account</a>
       </div>
     </div>
   );

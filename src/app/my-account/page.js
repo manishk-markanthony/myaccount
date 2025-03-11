@@ -1,6 +1,6 @@
 "use client"
 import MyAccount from './my-account';
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import Login from '../login/login';
 import { getCookie } from '@/util/helper';
@@ -12,22 +12,9 @@ export default function Page() {
   }, [isLoggedIn]);
   console.log(`isLoggedIn : ${isLoggedIn}`);
   if (!isLoggedIn) {
-
-    return (
-      <>
-        <Suspense fallback={<Loading />}>
-          <Login />
-        </Suspense>
-      </>
-    )
+    return ( <Login /> )
   }
-  return (
-    <>
-      <Suspense fallback={<Loading />}>
-        <MyAccount />
-      </Suspense>
-    </>
-  );
+  return ( <MyAccount />);
 }
 function Loading() {
   return <h2>🌀 Loading...</h2>;

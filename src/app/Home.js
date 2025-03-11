@@ -1,7 +1,7 @@
 export default function Home(props) {
   return (
     <div id="ping-container">
-      <h1> White claw UK</h1>
+      <h1> White claw US</h1>
       <h3>Please login to continue</h3>
 
       <div>

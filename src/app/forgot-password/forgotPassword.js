@@ -25,7 +25,6 @@ export default function ForgotPassword(props) {
         //queryString
         console.log(`queryString = ${queryString}`);
 
-
         //*** Retrieve SK Token ***/
         fetch(SK_GET_TOKEN_URL, requestOptions)
             .then((response) => response.json())
@@ -38,7 +37,7 @@ export default function ForgotPassword(props) {
                         companyId: COMPANY_ID,
                         policyId: FORGOT_PASSWORD_POLICY_ID,
                         parameters: {
-                            "redirectURL": queryString,
+                            "redirectUrl": queryString,
                             "brand": BRAND_WCB,
                             "country": COUNTRY_US
                         }

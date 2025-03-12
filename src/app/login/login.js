@@ -6,12 +6,12 @@ import { API_ROOT, BRAND_WCB, COMPANY_ID, COUNTRY_US, LOGIN_POLICY_ID, METHOD_GE
 export default function Login(props) {
 
   useEffect(() => {
-   
+
     var headers = new Headers();
     headers.append("X-SK-API-KEY", SK_API_KEY);
-    
+
     const requestOptions = {
-      method:  METHOD_GET,
+      method: METHOD_GET,
       headers: headers,
       redirect: "follow",
     };

@@ -1,3 +1,4 @@
+"use client"
 import { API_ROOT, BRAND_WCB, COMPANY_ID, COUNTRY_US, METHOD_GET, MY_ACCOUNT_POLICY_ID, PING_RUN_FLOW, SK_API_KEY, SK_GET_TOKEN_URL } from "@/util/constant";
 import Script from "next/script";
 

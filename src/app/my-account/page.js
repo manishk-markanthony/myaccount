@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 import Login from '../login/login';
 import { getCookie } from '@/util/helper';
-import Experimental from '../experimental/page';
 
 export default function Page() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -13,7 +12,7 @@ export default function Page() {
   }, [isLoggedIn]);
   console.log(`isLoggedIn : ${isLoggedIn}`);
   if (!isLoggedIn) {
-    return ( <Experimental /> )
+    return ( <Login /> )
   }
   return ( <MyAccount />);
 }

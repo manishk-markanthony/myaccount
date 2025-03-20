@@ -1,4 +1,12 @@
 "use client"
+
+import { eraseCookie } from "@/util/helper";
+
 export default function LogoutButton() {
-    return <button onClick={() => alert("Hello World")}>Logout</button>;
+    const logout = ()=>{
+        console.log('logout clicked');
+         eraseCookie("login") ;
+         eraseCookie("currentUser");
+    } 
+    return <button onClick={logout}>Logout</button>
 }

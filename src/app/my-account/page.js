@@ -23,10 +23,6 @@ export default function Page() {
       document.getElementById("rewardEntries").innerHTML = `Your entries available <b>${score}</b>`;
     }
   }
-
-  const onLogout = ()=>{
-    console.log('logout button clicked');
-  }
   return (
     <>
       <h1>

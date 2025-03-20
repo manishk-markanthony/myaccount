@@ -1,5 +1,4 @@
 "use client"
-
 import { eraseCookie } from "@/util/helper";
 
 export default function LogoutButton() {
@@ -7,6 +6,6 @@ export default function LogoutButton() {
         console.log('logout clicked');
          eraseCookie("login") ;
          eraseCookie("currentUser");
-    } 
+    }
     return <button onClick={logout}>Logout</button>
 }

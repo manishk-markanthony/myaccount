@@ -28,7 +28,7 @@ export default function Page() {
   }
   return (
     <>
-      <h1 style={{boxStyle}}>
+      <h1 style={boxStyle}>
         My Account
       </h1>
       <div>

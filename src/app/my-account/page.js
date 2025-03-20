@@ -28,13 +28,11 @@ export default function Page() {
       <h1>
         My Account
       </h1>
-      <br />
       <div>
         <p id="welcomeMsg"></p>
-        <br />
         <p id="rewardEntries"></p>
       </div>
-      <div className="buttonBox">
+      <div style={{padding: '10px'}}>
         <LogoutButton />
       </div>
     </>

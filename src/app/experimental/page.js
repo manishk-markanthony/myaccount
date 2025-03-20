@@ -1,6 +1,8 @@
 import Experimental from "./experimental";
 export default function Page() {
     return (
-        <Experimental></Experimental>
+        <div className="text-3xl font-bold underline">Adam
+            <Experimental></Experimental>
+        </div>
     );
 }

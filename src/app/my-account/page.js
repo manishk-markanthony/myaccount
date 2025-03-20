@@ -23,19 +23,24 @@ export default function Page() {
       document.getElementById("rewardEntries").innerHTML = `Your entries available <b>${score}</b>`;
     }
   }
-  const boxStyle = {
-    padding: '10px 05px'
+  const styles = {
+    buttonStyle: {
+      padding: '05px',
+      fontSize: '1em',
+    }, boxStyle: {
+      padding: '10px 05px'
+    }
   }
   return (
     <>
-      <h1 style={boxStyle}>
+      <h1 style={styles.boxStyle}>
         My Account
       </h1>
       <div>
-        <p id="welcomeMsg" style={boxStyle}></p>
-        <p id="rewardEntries" style={boxStyle}></p>
+        <p id="welcomeMsg" style={styles.boxStyle}></p>
+        <p id="rewardEntries" style={styles.boxStyle}></p>
       </div>
-      <div style={boxStyle}>
+      <div style={styles.buttonStyle}>
         <LogoutButton />
       </div>
     </>

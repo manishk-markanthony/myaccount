@@ -54,13 +54,17 @@ export default function Login(props) {
 
 
         setTimeout(function () {
-          document.getElementById("loader").style.display = 'none';
+          if (document.getElementById("loader")) {
+            document.getElementById("loader").style.display = 'none';
+          }
         }, 1500);
+        if (davinci) {
+          davinci.skRenderScreen(
+            document.getElementsByClassName("skWidget")[0],
+            props
+          )
+        }
 
-        davinci.skRenderScreen(
-          document.getElementsByClassName("skWidget")[0],
-          props
-        )
       })
       .catch((error) => {
         console.log('error while running flow ', error);

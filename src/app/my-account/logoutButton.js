@@ -6,6 +6,7 @@ export default function LogoutButton() {
         console.log('logout clicked');
          eraseCookie("login") ;
          eraseCookie("currentUser");
+         window.location.reload();
     }
     return <button onClick={logout}>Logout</button>
 }

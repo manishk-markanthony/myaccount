@@ -29,10 +29,10 @@ export default function Page() {
         My Account
       </h1>
       <div>
-        <p id="welcomeMsg"></p>
-        <p id="rewardEntries"></p>
+        <p id="welcomeMsg" style={{padding: '10px 05px'}}></p>
+        <p id="rewardEntries" style={{padding: '10px 05px'}}></p>
       </div>
-      <div style={{padding: '10px'}}>
+      <div style={{padding: '10px 05px'}}>
         <LogoutButton />
       </div>
     </>

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import Login from '../login/login';
 import { getCookie } from '@/util/helper';
+import LogoutButton from "./logoutButton";
 
 export default function Page() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -22,15 +23,24 @@ export default function Page() {
       document.getElementById("rewardEntries").innerHTML = `Your entries available <b>${score}</b>`;
     }
   }
+
+  const onLogout = ()=>{
+    console.log('logout button clicked');
+  }
   return (
     <>
       <h1>
         My Account
       </h1>
       <br />
-      <p id="welcomeMsg"></p>
-      <br />
-      <p id="rewardEntries"></p>
+      <div>
+        <p id="welcomeMsg"></p>
+        <br />
+        <p id="rewardEntries"></p>
+      </div>
+      <div className="buttonBox">
+        <LogoutButton />
+      </div>
     </>
   );
 }

@@ -23,16 +23,19 @@ export default function Page() {
       document.getElementById("rewardEntries").innerHTML = `Your entries available <b>${score}</b>`;
     }
   }
+  const boxStyle = {
+    padding: '10px 05px'
+  }
   return (
     <>
-      <h1>
+      <h1 style={{boxStyle}}>
         My Account
       </h1>
       <div>
-        <p id="welcomeMsg" style={{padding: '10px 05px'}}></p>
-        <p id="rewardEntries" style={{padding: '10px 05px'}}></p>
+        <p id="welcomeMsg" style={boxStyle}></p>
+        <p id="rewardEntries" style={boxStyle}></p>
       </div>
-      <div style={{padding: '10px 05px'}}>
+      <div style={boxStyle}>
         <LogoutButton />
       </div>
     </>

@@ -10,7 +10,7 @@ export default function Page() {
   const [userSession, setUserSession] = useState(); 
   const [score, setScore] = useState(1000);
   useEffect(() => {
-    setIsLoggedIn(getCookie("login"));
+    setIsLoggedIn(getCookie("IsLoggedIn"));
     const session = getCookie("session"); 
     if(session){
       setUserSession(base64Decode(session));
@@ -22,7 +22,7 @@ export default function Page() {
     return (<Login />)
   }
   if (document.getElementById("welcomeMsg")) {
-    let currentUser = getCookie("currentUser");
+    let currentUser = base64Decode(getCookie("currentUser"));
     document.getElementById("welcomeMsg").innerText = `Welcome, ${currentUser}!`;
 
     if (document.getElementById("rewardEntries")) {

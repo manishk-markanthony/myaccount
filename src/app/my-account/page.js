@@ -2,16 +2,19 @@
 import { useEffect, useState } from "react";
 
 import Login from '../login/login';
-import { getCookie } from '@/util/helper';
+import { base64Decode, getCookie } from '@/util/helper';
 import LogoutButton from "./logoutButton";
 
 export default function Page() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userSession, setUserSession] = useState(); 
   const [score, setScore] = useState(1000);
   useEffect(() => {
     setIsLoggedIn(getCookie("login"));
-  }, [isLoggedIn]);
+    setUserSession(base64Decode(getCookie("session")));
+  }, [isLoggedIn], [userSession]);
   console.log(`isLoggedIn : ${isLoggedIn}`);
+  console.log("user session", userSession)
   if (!isLoggedIn) {
     return (<Login />)
   }

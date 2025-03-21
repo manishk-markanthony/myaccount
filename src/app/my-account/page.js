@@ -11,7 +11,8 @@ export default function Page() {
   useEffect(() => {
     const session = getCookie("session"); 
     if(session){
-      setUserSession(base64Decode(session));
+      setUserSession(base64Decode(session)); 
+      //Need to add logic for validation
     }
   }, [userSession]);
   if (!userSession) {

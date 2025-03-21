@@ -18,7 +18,7 @@ export default function Page() {
   }, [isLoggedIn], [userSession]);
   //console.log(`isLoggedIn : ${isLoggedIn}`);
   //console.log("user session", userSession)
-  if (!isLoggedIn) {
+  if (!userSession) {
     return (<Login />)
   }
   if (document.getElementById("welcomeMsg")) {

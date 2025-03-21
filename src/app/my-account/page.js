@@ -16,8 +16,8 @@ export default function Page() {
       setUserSession(base64Decode(session));
     }
   }, [isLoggedIn], [userSession]);
-  console.log(`isLoggedIn : ${isLoggedIn}`);
-  console.log("user session", userSession)
+  //console.log(`isLoggedIn : ${isLoggedIn}`);
+  //console.log("user session", userSession)
   if (!isLoggedIn) {
     return (<Login />)
   }

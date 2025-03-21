@@ -6,18 +6,14 @@ import { base64Decode, getCookie } from '@/util/helper';
 import LogoutButton from "./logoutButton";
 
 export default function Page() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userSession, setUserSession] = useState(); 
   const [score, setScore] = useState(1000);
   useEffect(() => {
-    setIsLoggedIn(getCookie("IsLoggedIn"));
     const session = getCookie("session"); 
     if(session){
       setUserSession(base64Decode(session));
     }
-  }, [isLoggedIn], [userSession]);
-  //console.log(`isLoggedIn : ${isLoggedIn}`);
-  //console.log("user session", userSession)
+  }, [userSession]);
   if (!userSession) {
     return (<Login />)
   }

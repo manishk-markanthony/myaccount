@@ -11,7 +11,10 @@ export default function Page() {
   const [score, setScore] = useState(1000);
   useEffect(() => {
     setIsLoggedIn(getCookie("login"));
-    setUserSession(base64Decode(getCookie("session")));
+    const session = getCookie("session"); 
+    if(session){
+      setUserSession(base64Decode(session));
+    }
   }, [isLoggedIn], [userSession]);
   console.log(`isLoggedIn : ${isLoggedIn}`);
   console.log("user session", userSession)

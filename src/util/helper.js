@@ -21,3 +21,11 @@ export const getCookie = (name) => {
 export const eraseCookie = (name) => {
     document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
+export const base64Encode = (text) => {
+    const base64data = btoa(text);
+    return base64data;
+};
+export const base64Decode = (base64data) => {
+    const decoded = atob(base64data);
+    return decoded;
+};

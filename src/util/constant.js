@@ -16,4 +16,5 @@ export const BRAND_WCB = "WCB";
 export const BRAND_MASS = "MCB";
 export const COUNTRY_US = "US";
 export const COUNTRY_UK = "UK";
+export const SecretKey = 'secretKeyForEncryption';
 

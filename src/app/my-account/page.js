@@ -4,11 +4,13 @@ import { useEffect, useState } from "react";
 import Login from '../login/login';
 import { base64Decode, getCookie } from '@/util/helper';
 import LogoutButton from "./logoutButton";
+import { encryptData } from "@/util/encryptData";
 
 export default function Page() {
   const [userSession, setUserSession] = useState(); 
   const [score, setScore] = useState(1000);
   useEffect(() => {
+    encryptData();
     const session = getCookie("session"); 
     if(session){
       setUserSession(base64Decode(session)); 
